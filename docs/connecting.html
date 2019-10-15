@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Connecting your Arduino</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reset.css">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section><section id="connecting-your-arduino" class="title-slide slide level2"><h2>Connecting your Arduino</h2></section><section id="pc" class="slide level3">
+<h3>PC</h3>
+<p>Connect the <code>USB</code> cable into the <code>USB</code> cable on your PC.</p>
+<p><img data-src="images/USB-PC.jpg" /></p>
+</section><section id="arduino-board" class="slide level3">
+<h3>Arduino Board</h3>
+<p>Connect the square end of the <code>USB</code> into the Arduino Board.</p>
+<p><img data-src="images/USB-Board.jpg" /></p>
+</section><section id="power" class="slide level3">
+<h3>Power</h3>
+<p>A light should appear on the board.</p>
+<p><img data-src="images/Board-Power.jpg" /></p>
+</section></section>
+<section><section id="com-port" class="title-slide slide level2"><h2>COM port</h2></section><section id="what-is-the-com-port" class="slide level3">
+<h3>What is the <code>COM</code> port?</h3>
+<p>The <code>COM</code> port is data communication gateway between your PC and the Arduino board. In order to program the board (from your Arduino IDE), you need to connect your Arduino IDE to the correct <code>COM</code> port that your PC is using to communicate with the Arduino board.</p>
+<p>The <code>COM</code> port can be any number <code>1 to 256</code>, however it is usually under <code>10</code> - e.g. <code>COM3</code> or <code>COM4</code>.</p>
+</section><section id="selecting-the-right-com-port" class="slide level3">
+<h3>Selecting the right COM port</h3>
+<p>Within the Arduino IDE select <code>Tools -&gt; Port</code>:</p>
+<p><img data-src="images/COM-port-select.png" /></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: false,
+        // Transition style
+        transition: 'concave', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

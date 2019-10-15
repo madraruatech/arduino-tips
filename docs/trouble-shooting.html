@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Trouble Shooting your Arduino</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reset.css">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="trouble-shooting-your-arduino" class="slide level2">
+<h2>Trouble Shooting your Arduino</h2>
+<p>Before looking here check out the <a href="connecting.html">connections page</a> and the <a href="components.html">components</a> to better understand the various parts.</p>
+</section>
+<section id="what-is-the-problem" class="slide level2">
+<h2>What is the problem?</h2>
+<p>There may be a problem in any of the <a href="components.html">components</a> that your solution has, namely:</p>
+<ul>
+<li>Your PC to Arduino board connection</li>
+<li>The code you are running on the Arduino board</li>
+<li>The electronic components and their connections (NOT covered here)</li>
+</ul>
+</section>
+<section id="com-port" class="slide level2">
+<h2>COM port</h2>
+<p>What is the <code>COM</code> port?</p>
+<p>The <code>COM</code> port is data communication gateway between your PC and the Arduino board. In order to program the board (from your Arduino IDE), you need to connect your Arduino IDE to the correct <code>COM</code> port that your PC is using to communicate with the Arduino board.</p>
+<p>The <code>COM</code> port can be any number <code>1 to 256</code>, however it is usually under <code>10</code> - e.g. <code>COM3</code> or <code>COM4</code>.</p>
+</section>
+<section class="slide level2">
+
+<section id="selecting-the-right-com-port" class="level3">
+<h3>Selecting the right COM port</h3>
+<p>Within the Arduino IDE select <code>Tools -&gt; Port</code>:</p>
+<p><img data-src="images/COM-port-select.png" /></p>
+<p>–</p>
+</section>
+</section>
+<section id="adding-serial-debug-code" class="slide level2">
+<h2>Adding Serial Debug Code</h2>
+<p>The following code will show you that your code is being executed on the Arduino <code>board</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">/*    Setup  */</span> </span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="dt">void</span> setup() {     </span>
+<span id="cb1-3"><a href="#cb1-3"></a>        <span class="co">// Start recording text at the Serial Monitor</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>        Serial.begin(<span class="dv">9600</span>);</span>
+<span id="cb1-5"><a href="#cb1-5"></a>        ...</span>
+<span id="cb1-6"><a href="#cb1-6"></a>}</span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co">// the loop function runs over and over again forever</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="dt">void</span> loop() {</span>
+<span id="cb1-9"><a href="#cb1-9"></a>        <span class="co">// The following line will write to the Serial Monitor   </span></span>
+<span id="cb1-10"><a href="#cb1-10"></a>        Serial.println(<span class="st">&quot;Turn the light ON...&quot;</span>);</span>
+<span id="cb1-11"><a href="#cb1-11"></a>        digitalWrite(LED_BUILTIN, HIGH); <span class="co">// turn the LED on (HIGH is the voltage level)</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>        ...</span></code></pre></div>
+<p>–</p>
+<section id="open-the-serial-console" class="level3">
+<h3>Open the Serial Console</h3>
+<p><img data-src="images/enable-serial-monitor.png" /></p>
+</section>
+</section>
+<section class="slide level2">
+
+<section id="serial-monitor-output" class="level3">
+<h3>Serial Monitor Output</h3>
+<p><img data-src="images/view-serial-monitor.png" /></p>
+<p>–</p>
+</section>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: false,
+        // Transition style
+        transition: 'concave', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
