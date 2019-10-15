@@ -80,7 +80,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
@@ -111,11 +111,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The electronic components and their connections (NOT covered here)</li>
 </ul>
 </section>
-<section id="com-port" class="slide level2">
-<h2>COM port</h2>
-<p>What is the <code>COM</code> port?</p>
-<p>The <code>COM</code> port is data communication gateway between your PC and the Arduino board. In order to program the board (from your Arduino IDE), you need to connect your Arduino IDE to the correct <code>COM</code> port that your PC is using to communicate with the Arduino board.</p>
-<p>The <code>COM</code> port can be any number <code>1 to 256</code>, however it is usually under <code>10</code> - e.g. <code>COM3</code> or <code>COM4</code>.</p>
+<section class="slide level2">
+
+<section id="check-the-com-port" class="level3">
+<h3>Check the COM Port</h3>
+<p>Check the <code>COM</code> port in your Arduino IDE is correct.</p>
+<p><strong>Note:</strong> <code>COM</code> port can be any number <code>1 to 256</code>, however it is usually under <code>10</code> - e.g. <code>COM3</code> or <code>COM4</code>.</p>
+</section>
 </section>
 <section class="slide level2">
 
@@ -123,7 +125,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3>Selecting the right COM port</h3>
 <p>Within the Arduino IDE select <code>Tools -&gt; Port</code>:</p>
 <p><img data-src="images/COM-port-select.png" /></p>
-<p>–</p>
 </section>
 </section>
 <section id="adding-serial-debug-code" class="slide level2">
@@ -141,7 +142,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-10"><a href="#cb1-10"></a>        Serial.println(<span class="st">&quot;Turn the light ON...&quot;</span>);</span>
 <span id="cb1-11"><a href="#cb1-11"></a>        digitalWrite(LED_BUILTIN, HIGH); <span class="co">// turn the LED on (HIGH is the voltage level)</span></span>
 <span id="cb1-12"><a href="#cb1-12"></a>        ...</span></code></pre></div>
-<p>–</p>
+</section>
+<section class="slide level2">
+
 <section id="open-the-serial-console" class="level3">
 <h3>Open the Serial Console</h3>
 <p><img data-src="images/enable-serial-monitor.png" /></p>
@@ -152,7 +155,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="serial-monitor-output" class="level3">
 <h3>Serial Monitor Output</h3>
 <p><img data-src="images/view-serial-monitor.png" /></p>
-<p>–</p>
 </section>
 </section>
     </div>

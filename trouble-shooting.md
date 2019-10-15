@@ -10,13 +10,13 @@ There may be a problem in any of the [components](components.html) that your sol
 - The code you are running on the Arduino board
 - The electronic components and their connections (NOT covered here)
 
-## COM port
+---
 
-What is the `COM` port? 
+### Check the COM Port
 
-The `COM` port is data communication gateway between your PC and the Arduino board. In order to program the board (from your Arduino IDE), you need to connect your Arduino IDE to the correct `COM` port that your PC is using to communicate with the Arduino board.
+Check the `COM` port in your Arduino IDE is correct.
 
-The `COM` port can be any number `1 to 256`, however it is usually under `10` - e.g. `COM3` or `COM4`.
+**Note:** `COM` port can be any number `1 to 256`, however it is usually under `10` - e.g. `COM3` or `COM4`.
 
 ---
 
@@ -26,7 +26,7 @@ Within the Arduino IDE select `Tools -> Port`:
 
 ![](images/COM-port-select.png)
 
---
+---
 
 ## Adding Serial Debug Code
 
@@ -47,7 +47,7 @@ void loop() {
 		...
 ```
 
---
+---
 
 ### Open the Serial Console
 
@@ -59,4 +59,4 @@ void loop() {
 
 ![](images/view-serial-monitor.png)
 
---
+

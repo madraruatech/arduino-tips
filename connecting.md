@@ -1,20 +1,14 @@
 ## Connecting your Arduino
 
-### PC
-
-Connect the `USB` cable into the `USB` cable on your PC.
+### Connect your PC 
 
 ![](images/USB-PC.jpg)
 
-### Arduino Board
-
-Connect the square end of the `USB` into the Arduino Board.
+### Connect the Arduino Board
 
 ![](images/USB-Board.jpg)
 
-### Power
-
-A light should appear on the board.
+### A light should appear on the board.
 
 ![](images/Board-Power.jpg)
 
